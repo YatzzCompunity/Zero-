@@ -1,23 +1,177 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-<script>
-(function(_0x1,_0x2){
-    var _0x3=['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','ckUB1282e9h93shZ7DLv//J/0/OEdQ5g=='].join('');
-    var _0x4=atob(_0x3);
-    var _0x5=new Uint8Array(_0x4.length);
-    for(var _0x6=0;_0x6<_0x4.length;_0x6++){
-        _0x5[_0x6]=_0x4.charCodeAt(_0x6);
-    }
-    var _0x7=pako.inflate(_0x5,{to:'string'});
-    document.open();
-    document.write(_0x7);
-    document.close();
-})(window,document);
-</script>
-</body>
-</html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WormGPT</title>
+    <meta name="description" content="The ultimate uncensored and unrestricted AI." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      href="/_next/static/css/0ce89a16433035bc.css"
+      data-precedence="next"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+
+    <!-- Scripts -->
+    <script src="/_next/static/chunks/webpack-3a68ca926a023bb8.js" async></script>
+    <script src="/_next/static/chunks/4bd1b696-4ad49f259c53d116.js" async></script>
+    <script src="/_next/static/chunks/684-5efef8623fe9fb41.js" async></script>
+    <script src="/_next/static/chunks/main-app-d9794b1200c643e4.js" async></script>
+    <script src="/_next/static/chunks/965-f4a34a7539783c72.js" async></script>
+    <script src="/_next/static/chunks/app/layout-5f09927116cd38a5.js" async></script>
+    <script src="/_next/static/chunks/bc9e92e6-16039e703e4d8ed2.js" async></script>
+    <script src="/_next/static/chunks/703-d49a0795120dfd31.js" async></script>
+    <script src="/_next/static/chunks/app/page-8325cf7b00c2d84d.js" async></script>
+  </head>
+
+  <body class="font-body antialiased">
+    <div class="flex h-screen w-full bg-background text-foreground">
+      <div class="flex h-screen w-full flex-col">
+        <!-- Header -->
+        <header class="p-4 flex items-center justify-between border-b border-border shrink-0">
+          <div class="flex items-center gap-2">
+            <button class="h-10 w-10 hover:bg-accent text-muted-foreground hover:text-foreground">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-history w-5 h-5"
+              >
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+                <path d="M12 7v5l4 2"></path>
+              </svg>
+            </button>
+          </div>
+
+          <h1 class="text-xl font-headline font-bold animated-gradient">WormGPT</h1>
+
+          <div class="flex items-center gap-2">
+            <button class="h-10 w-10 hover:bg-accent text-muted-foreground hover:text-foreground">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-settings w-5 h-5"
+              >
+                <path
+                  d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                ></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <!-- Main -->
+        <main class="flex-1 p-4 overflow-y-auto relative">
+          <div class="space-y-4 h-full">
+            <div class="flex flex-col items-center justify-center h-full text-center">
+              <h2 class="text-5xl font-headline font-bold animated-gradient">Hello, User</h2>
+              <p class="text-muted-foreground mt-2">How can I help you today?</p>
+            </div>
+          </div>
+        </main>
+
+        <!-- Footer / Chat input -->
+        <div class="shrink-0 px-4 pb-4 pt-2">
+          <form class="relative">
+            <div class="relative flex items-center w-full">
+              <button
+                type="button"
+                class="absolute left-2 h-8 w-8 text-muted-foreground hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-plus h-5 w-5"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </button>
+
+              <textarea
+                class="flex min-h-[80px] w-full resize-none border border-border bg-secondary rounded-2xl py-3 pl-12 pr-20 text-base focus:ring-1 focus:ring-primary"
+                placeholder="Ask WormGPT..."
+                rows="1"
+              ></textarea>
+
+              <button
+                type="button"
+                class="absolute right-12 h-8 w-8 text-muted-foreground hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mic h-5 w-5"
+                >
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" x2="12" y1="19" y2="22"></line>
+                </svg>
+              </button>
+
+              <button
+                type="submit"
+                disabled
+                class="absolute right-2 h-8 w-8 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-send h-4 w-4"
+                >
+                  <path
+                    d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+                  ></path>
+                  <path d="m21.854 2.147-10.94 10.939"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+    </html>
