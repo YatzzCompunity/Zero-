@@ -95,7 +95,7 @@ class zam-ai {
     async callGeminiAPI(text) {
         try {
             const prompt = "Kamu adalah Zam-AI, asisten AI yang ahli dalam programming dan teknologi. Fokus utama kamu adalah membantu dalam hal coding, development, debugging, dan konsep pemrograman. Namun kamu juga bisa menjawab pertanyaan umum seperti AI pada umumnya. Gunakan bahasa Indonesia yang natural dan mudah dipahami. Berikan jawaban yang akurat dan membantu.";
-            const apiUrl = `https://api.siputzx.my.id/api/ai/gpt3?prompt=${encodeURIComponent(prompt)}&content=${encodeURIComponent(text)}`;
+            const apiUrl = `https://api-faa.my.id/faa/ai-hyper?text=${encodedMessage}`;
             
             const response = await fetch(apiUrl);
             const data = await response.json();
